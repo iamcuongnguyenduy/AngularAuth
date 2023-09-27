@@ -86,4 +86,20 @@ router.post("/register", (req, res) => {
     });
 });
 
+router.post("/login", (req, res) => {
+  let userData = req.body;
+  User.find({ email: userData.email }, (error, user) => {
+    if (error) console.error(error);
+    else {
+      if (!user) {
+        res.status(401).send("Invalid Email");
+      } else {
+        if (user.password !== req.body.password)
+          res.status(401).send("Invalid Password");
+        else res.status(200).send(user);
+      }
+    }
+  });
+});
+
 module.exports = router;
