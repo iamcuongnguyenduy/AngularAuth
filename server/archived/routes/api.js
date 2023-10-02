@@ -6,7 +6,7 @@ const User = require("../models/user");
 const mongoose = require("mongoose");
 
 const uri =
-  "mongodb+srv://ndcuong882014:1_Abc_123@dctrainingfe.kcbnzpq.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
+  "mongodb+srv://ndcuong882014:1_Abc_123@dctrainingfe.kcbnzpq.mongodb.net/?retryWrites=true&w=majority&appName=AngularAuth";
 
 // const client = new MongoClient(uri);
 // client.connect();
