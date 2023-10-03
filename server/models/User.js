@@ -17,17 +17,21 @@ const UserSchema = mongoose.Schema(
     },
     password: {
       type: String,
-      require: true
+      require: true,
     },
     mobileNumber: {
       type: Number,
       require: true,
       unique: true,
     },
+    // role: {
+    //   type: [Schema.Types.ObjectId],
+    //   require: true,
+    //   ref: "Role",
+    // },
     role: {
-      type: [Schema.Types.ObjectId],
+      type: String,
       require: true,
-      ref: "Role",
     },
   },
   {
