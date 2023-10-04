@@ -14,10 +14,11 @@
                 type="password" class="p-2 border border-gray-300 rounded" placeholder="Password">
             <span *ngIf="password?.errors?.['required'] && password?.dirty" class="text-red-500">*Password is required</span>
         </div>
-        <button class="bg-indigo-300 p-2 rounded mt-3 text-white">Submit</button>
+        <button class="bg-indigo-600 p-2 rounded mt-3 text-white">Login</button>
     </form>
-    <div class="flex justify-center mt-3">
-        <span>Not yet has account?</span> <a href=# class="text-indigo-600 ml-2 cursor-pointer">Register here</a>
+    <div class="flex justify-between mt-3">
+        <a routerLink="/register" class="text-indigo-600 ml-2 cursor-pointer">Register here</a>
+        <a routerLink="/forgetpassword" class="text-indigo-600 ml-2 cursor-pointer">Forget Password</a>
     </div>
 </div>
 

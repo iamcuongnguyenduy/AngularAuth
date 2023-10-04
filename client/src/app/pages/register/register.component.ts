@@ -2,11 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
@@ -14,6 +15,7 @@ export default class RegisterComponent implements OnInit {
   fb = inject(FormBuilder)
   form!: FormGroup
   authService = inject(AuthService)
+  router = inject(Router)
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -33,13 +35,13 @@ export default class RegisterComponent implements OnInit {
     .subscribe({
       next: (res)=>{
         alert("User created")
+        this.form.reset()
+        this.router.navigate(['/login'])
       },
       error: (err)=>{
-        console.log(err);
-        
+        console.log(err);        
       }
-    })
-    
+    })    
   }
 
   get firstName(){
