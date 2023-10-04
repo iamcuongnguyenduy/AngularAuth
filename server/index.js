@@ -3,6 +3,8 @@ import express from "express";
 import dotenv from "dotenv";
 import roleRoute from "./routes/role.js";
 import userRoute from "./routes/user.js";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 const app = express();
 
 //read env data from .env
@@ -10,6 +12,8 @@ dotenv.config();
 
 //read body json of request
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors())
 
 app.use("/api/role", roleRoute);
 app.use("/api/user", userRoute);
