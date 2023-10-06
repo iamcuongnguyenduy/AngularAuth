@@ -23,6 +23,10 @@ export class AuthService {
     return !!localStorage.getItem("user_id")
     //return true if having user id in localstorage, false if not
   }
+
+  getAllUsers(){
+    return this.http.get<any>(`${apiUrls.userServiceApi}all`)
+  }
 }
 
 

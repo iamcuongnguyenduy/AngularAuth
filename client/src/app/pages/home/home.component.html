@@ -1,1 +1,18 @@
 <h1 class="text-center mt-6 text-blue-950">home works!</h1>
+<button (click)="getUser()" class="bg-indigo-600 p-2 rounded mt-3 text-white">Load user</button>
+<table>
+    <thead>
+        <tr class="border border-slate-300">
+          <th class="border border-slate-300 p-5" scope="col">Email</th>
+          <th class="border border-slate-300 p-5" scope="col">Phone</th>
+          <th class="border border-slate-300 p-5" scope="col">Role</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="border border-slate-300 p-5">{{ user['email']}}</td>
+        <td class="border border-slate-300 p-5">{{ user['mobileNumber']}}</td>
+        <td class="border border-slate-300 p-5">{{ user['role']}}</td>
+      </tr>
+    </tbody>
+  </table>

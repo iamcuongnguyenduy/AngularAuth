@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,18 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export default class HomeComponent {
+export default class HomeComponent implements OnInit {
 
+  authService = inject(AuthService)
+  users = [];
+  ngOnInit(): void {
+    // this.getUser()   
+  }
+
+  getUser(){
+    this.authService.getAllUsers().subscribe((res)=>{
+      this.users = res.data    
+    })
+    console.log(this.users);
+  }
 }

@@ -28,7 +28,7 @@ export default class LoginComponent {
     this.authService.loginService(this.form.value)
     .subscribe({
       next: (res)=>{
-        console.log(res.token);
+        // console.log(res.token);
         alert("Login successfully")
         localStorage.setItem("user_id", res.data._id)
         this.authService.isUserLoggedIn$.next(true);     
