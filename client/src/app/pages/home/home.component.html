@@ -3,16 +3,24 @@
 <table>
     <thead>
         <tr class="border border-slate-300">
+          <th class="border border-slate-300 p-5" scope="col">First Name</th>
+          <th class="border border-slate-300 p-5" scope="col">Last Name</th>
           <th class="border border-slate-300 p-5" scope="col">Email</th>
           <th class="border border-slate-300 p-5" scope="col">Phone</th>
           <th class="border border-slate-300 p-5" scope="col">Role</th>
+          <th class="border border-slate-300 p-5" scope="col">Mobile Number</th>
+          
         </tr>
       </thead>
     <tbody>
       <tr *ngFor="let user of users">
+        <td class="border border-slate-300 p-5">{{ user['firstName']}}</td>
+        <td class="border border-slate-300 p-5">{{ user['lastName']}}</td>
         <td class="border border-slate-300 p-5">{{ user['email']}}</td>
         <td class="border border-slate-300 p-5">{{ user['mobileNumber']}}</td>
         <td class="border border-slate-300 p-5">{{ user['role']}}</td>
+        <td class="border border-slate-300 p-5">{{ user['mobileNumber']}}</td>
+        
       </tr>
     </tbody>
   </table>
