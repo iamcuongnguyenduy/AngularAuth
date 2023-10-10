@@ -7,20 +7,19 @@ import { AuthService } from 'src/app/services/auth.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export default class HomeComponent implements OnInit {
-
-  authService = inject(AuthService)
+  authService = inject(AuthService);
   users = [];
   ngOnInit(): void {
-    // this.getUser()   
+    // this.getUser()
   }
 
-  getUser(){
-    this.authService.getAllUsers().subscribe((res)=>{
-      this.users = res.data    
-    })
-    console.log(this.users);
+  getUser() {
+    this.authService.getAllUsers().subscribe((res) => {
+      this.users = res.data;
+    });
+    // console.log(this.users);
   }
 }
