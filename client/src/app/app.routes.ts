@@ -5,5 +5,6 @@ export const routes: Routes = [
     {path: 'register', loadComponent: ()=>import('./pages/register/register.component')},
     {path: 'forgetpassword', loadComponent: ()=>import('./pages/forgetpassword/forgetpassword.component')},
     {path: 'resetpassword', loadComponent: ()=>import('./pages/resetpassword/resetpassword.component')},
-    {path: 'home', loadComponent: ()=>import('./pages/home/home.component')}
+    {path: 'home', loadComponent: ()=>import('./pages/home/home.component')},
+    {path: 'role', loadComponent: ()=>import('./pages/role/role.component')}
 ];

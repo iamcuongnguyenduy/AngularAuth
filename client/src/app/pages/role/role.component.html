@@ -1,0 +1,9 @@
+<h2 class="text-center text-indigo-950 mt-10 ">Roles: </h2>
+<input class="rounded border-blue-950" type="text" 
+    (keyup.enter)="addRole(rolename)"
+    name="addrole" id="addrole" placeholder="role name" #rolename>
+<button (click)="addRole(rolename)">Add Role</button>
+
+<ul class="text-left ml-96 text-blue-900 list-decimal list-inside">
+    <li *ngFor="let role of roles">{{role.role}}</li>
+</ul>
