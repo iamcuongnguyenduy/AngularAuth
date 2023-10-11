@@ -31,7 +31,8 @@ export default class LoginComponent {
         // console.log(res.token);
         alert("Login successfully")
         localStorage.setItem("user_id", res.data._id)
-        this.authService.isUserLoggedIn$.next(true);     
+        this.authService.isUserLoggedIn$.next(true); 
+        this.authService.userLoggedIn$.next(res.data.email)    
         this.router.navigate(['/home'])
         this.form.reset();
       },

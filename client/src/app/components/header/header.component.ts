@@ -14,10 +14,14 @@ export class HeaderComponent implements OnInit {
 
   authService = inject(AuthService)
   isLoggedIn: boolean = false;
+  userLoggedIn: String = '';
 
   ngOnInit(): void {
     this.authService.isUserLoggedIn$.subscribe(res =>{
       this.isLoggedIn = this.authService.isLoggedIn()
+    })
+    this.authService.userLoggedIn$.subscribe(res=>{
+      this.userLoggedIn = res;
     })
   }
 

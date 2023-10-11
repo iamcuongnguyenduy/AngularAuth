@@ -10,6 +10,7 @@ export class AuthService {
   http = inject(HttpClient);
 
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
+  userLoggedIn$ = new BehaviorSubject<String>("")
 
   registerService(registerObj: any) {
     return this.http.post<any>(

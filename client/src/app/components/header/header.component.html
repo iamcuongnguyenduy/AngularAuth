@@ -15,7 +15,7 @@
         </ng-container>
         <ng-container *ngIf="isLoggedIn">
             <span routerLink="/role" class="text-x1 cursor-pointer text-gray-200 font-bold m-3 hover: underline hover: text-indigo-200">Role</span>
-            <span class="text-x1 cursor-pointer text-gray-200 font-bold m-3 hover: underline hover: text-indigo-200">Welcome User</span>
+            <span class="text-x1 cursor-pointer text-gray-200 font-bold m-3 hover: underline hover: text-indigo-200">Welcome {{userLoggedIn}}</span>
             <span routerLink="/login" 
             (click)="logout()"
             class="text-x1 cursor-pointer text-gray-200 font-bold m-3 hover: underline hover: text-indigo-200">Logout</span>
