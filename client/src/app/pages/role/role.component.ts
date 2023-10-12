@@ -31,9 +31,15 @@ export default class RoleComponent implements OnInit {
     
     this.roleService.addRole(post)
     .subscribe(res=>{
-      this.roles.push(res.role)
+      this.roles.push(res)
       console.log(this.roles);
             
+    })
+  }
+
+  deleteRole(roleId: any){
+    this.roleService.deleteRole(roleId).subscribe(res=>{
+      alert("Deleted successfully")
     })
   }
     

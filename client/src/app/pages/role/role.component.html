@@ -1,9 +1,32 @@
-<h2 class="text-center text-indigo-950 mt-10 ">Roles: </h2>
-<input class="rounded border-blue-950" type="text" 
+
+<input class="peer m-20 rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+type="text" 
     (keyup.enter)="addRole(rolename)"
     name="addrole" id="addrole" placeholder="role name" #rolename>
-<button (click)="addRole(rolename)">Add Role</button>
+<button (click)="addRole(rolename)"
+class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Role</button>
+<table class="border-separate border border-slate-400 ml-20">
+    <thead>
+      <tr>
+        <th class="border border-slate-300 ...">Role ID</th>
+        <th class="border border-slate-300 ...">Role Name</th>
+        <th class="border border-slate-300 ...">Description</th>
+        <th class="border border-slate-300 ...">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roles">
+        <td class="border border-slate-300 ...">{{role._id}}</td>
+        <td class="border border-slate-300 ...">{{role.role}}</td>
+        <td class="border border-slate-300 ...">{{role.description}}</td>
+        <button (click)="deleteRole(role._id)"
+            class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Delete</button>
+      </tr>
 
+    </tbody>
+  </table>
+
+<!-- 
 <ul class="text-left ml-96 text-blue-900 list-decimal list-inside">
     <li *ngFor="let role of roles">{{role.role}}</li>
-</ul>
+</ul> -->

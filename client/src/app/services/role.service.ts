@@ -14,6 +14,10 @@ export class RoleService {
   }
 
   addRole(role: any){
-    return this.http.post<any>(`${apiUrls.roleServiceApi}`, role, {withCredentials: true})
+   return this.http.post<any>(`${apiUrls.roleServiceApi}`, role, {withCredentials: true})
+  }
+
+  deleteRole(roleId: any){
+    return this.http.delete<any>(`${apiUrls.roleServiceApi}delete/${roleId}`)
   }
 }
