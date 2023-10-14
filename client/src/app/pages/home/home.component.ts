@@ -16,20 +16,21 @@ export default class HomeComponent implements OnInit {
   ngOnInit(): void {
     // this.getUser()
   }
-  router = inject(Router)
+  router = inject(Router);
   getUser() {
     // this.authService.getAllUsers().subscribe((res) => {
     //   this.users = res.data;
     // });
     // console.log(this.users);
     this.authService.getAllUsers().subscribe({
-      next: (res) =>{
-        this.users = res.data
-      }, error: (err) =>{
+      next: (res) => {
+        this.users = res.data;
+      },
+      error: (err) => {
         console.log(err);
-        localStorage.removeItem("user_id")
-        this.router.navigate(['login'])        
-      }
-    })
+        localStorage.removeItem('user_id');
+        this.router.navigate(['login']);
+      },
+    });
   }
 }
