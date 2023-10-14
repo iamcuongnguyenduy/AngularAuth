@@ -22,7 +22,7 @@ export const routes: Routes = [
       import('./pages/resetpassword/resetpassword.component'),
   },
   { path: 'home', canActivate: [authGuard], loadComponent: () => import('./pages/home/home.component') },
-  { path: 'role', canActivate: [authGuard], loadComponent: () => import('./pages/role/role.component') },
+  { path: 'role', canActivate: [authGuard], loadComponent: () => import('./modules/admin/role/role.component') },
   {
     path: '**',
     loadComponent: () => import('./components/not-found/not-found.component'),
