@@ -31,6 +31,7 @@ export default class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+    if (this.authService.isLoggedIn()){this.router.navigate(['/home'])}
   }
 
   login() {

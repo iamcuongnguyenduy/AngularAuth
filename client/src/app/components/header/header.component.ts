@@ -20,10 +20,15 @@ export class HeaderComponent implements OnInit {
     this.authService.isUserLoggedIn$.subscribe(res =>{
       this.isLoggedIn = this.authService.isLoggedIn()
     })
-    this.authService.userLoggedIn$.subscribe(res=>{
-      this.userLoggedIn = res;
+    this.getUserLoggedIn()    
+  }
+
+  getUserLoggedIn(){
+    return this.authService.userLoggedIn$.subscribe(res=>{
+      this.userLoggedIn = res; 
     })
   }
+
 
   logout(){
     localStorage.removeItem("user_id")

@@ -31,6 +31,7 @@ export class AuthService {
     //return true if having user id in localstorage, false if not
   }
 
+
   getAllUsers() {
     return this.http.get<any>(`${apiUrls.userServiceApi}all`, {
       withCredentials: true,
