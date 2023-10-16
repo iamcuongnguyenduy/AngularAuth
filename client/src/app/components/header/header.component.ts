@@ -14,20 +14,22 @@ export class HeaderComponent implements OnInit {
 
   authService = inject(AuthService)
   isLoggedIn: boolean = false;
-  userLoggedIn: String = '';
+  // userLoggedIn: String = ''
+  userLoggedIn = localStorage.getItem("username")
 
   ngOnInit(): void {
     this.authService.isUserLoggedIn$.subscribe(res =>{
       this.isLoggedIn = this.authService.isLoggedIn()
     })
-    this.getUserLoggedIn()    
+  
+    // this.getUserLoggedIn()    
   }
 
-  getUserLoggedIn(){
-    return this.authService.userLoggedIn$.subscribe(res=>{
-      this.userLoggedIn = res; 
-    })
-  }
+  // getUserLoggedIn(){
+  //   return this.authService.userLoggedIn$.subscribe(res=>{
+  //     this.userLoggedIn = res; 
+  //   })
+  // }
 
 
   logout(){
