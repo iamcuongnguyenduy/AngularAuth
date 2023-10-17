@@ -10,9 +10,9 @@ export class AuthService {
   http = inject(HttpClient);
 
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
-  userLoggedIn$ = new BehaviorSubject<String>("")
+  userLoggedIn$ = new BehaviorSubject<String>('');
 
-  registerService(registerObj: any) {
+  registerUser(registerObj: any) {
     return this.http.post<any>(
       `${apiUrls.userServiceApi}register`,
       registerObj,
@@ -20,7 +20,7 @@ export class AuthService {
     );
   }
 
-  loginService(loginObj: any) {
+  loginUser(loginObj: any) {
     return this.http.post<any>(`${apiUrls.userServiceApi}login`, loginObj, {
       withCredentials: true,
     });
@@ -30,7 +30,6 @@ export class AuthService {
     return !!localStorage.getItem('user_id');
     //return true if having user id in localstorage, false if not
   }
-
 
   getAllUsers() {
     return this.http.get<any>(`${apiUrls.userServiceApi}all`, {

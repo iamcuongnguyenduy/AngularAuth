@@ -7,41 +7,41 @@ import { RoleService } from 'src/app/services/role.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './role.component.html',
-  styleUrls: ['./role.component.scss']
+  styleUrls: ['./role.component.scss'],
 })
 export default class RoleComponent implements OnInit {
   roleService = inject(RoleService);
-  roles: any
+  roles: any;
 
   ngOnInit(): void {
-    this.getRole()
+    this.getRole();
   }
 
-  getRole(){
-    this.roleService.getRole().subscribe(
-      response => {
-        this.roles = response
-      }
-    )
+  getRole() {
+    this.roleService.getRole().subscribe((response) => {
+      this.roles = response;
+    });
   }
-  addRole(rolename: HTMLInputElement){
-    let post = {role: rolename.value}
-    rolename.value = ""
+  addRole(rolename: HTMLInputElement) {
+    let post = { role: rolename.value };
+    rolename.value = '';
     console.log(post);
-    
-    this.roleService.addRole(post)
-    .subscribe(res=>{
-      this.roles.push(res)
-      console.log(this.roles);
-            
-    })
+
+    this.roleService.addRole(post).subscribe(
+      (res) => {
+        this.roles.push(res);
+        console.log(this.roles);
+      },
+      (error) => {
+        alert('Something went wrong');
+        console.log(error);
+      }
+    );
   }
 
-  deleteRole(roleId: any){
-    this.roleService.deleteRole(roleId).subscribe(res=>{
-      alert("Deleted successfully")
-    })
+  deleteRole(roleId: any) {
+    this.roleService.deleteRole(roleId).subscribe((res) => {
+      alert('Deleted successfully');
+    });
   }
-    
-    
 }

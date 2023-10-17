@@ -1,59 +1,111 @@
 <div class="lg: w-2/6 p-10 shadow-lg mx-auto">
-    <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
-    <form [formGroup]="form" (ngSubmit)="register()" class="flex flex-col">
-        <div class="flex flex-col  mt-2 mb-1">
-            <!-- <label for="firstName">First name</label> -->
-            <input
-                formControlName = "firstName"
-                type="text" class="p-2 border border-gray-300 rounded" placeholder="First Name">
-            <span *ngIf="firstName?.errors?.['required'] && firstName?.dirty" class="text-red-500">*First name is required</span>
-        </div>
-        <div class="flex flex-col  mt-2 mb-1">
-            <input 
-                formControlName = "lastName"
-                type="text" class="p-2 border border-gray-300 rounded" placeholder="Last Name">
-            <span *ngIf="lastName?.errors?.['required'] && lastName?.dirty" class="text-red-500">*Last name is required</span>
-        </div>
-        <div class="flex flex-col  mt-2 mb-1">
-            <input 
-                formControlName = "email"
-                type="email" class="p-2 border border-gray-300 rounded" placeholder="Email addresss">
-            <span *ngIf="email?.errors?.['required'] && email?.dirty" class="text-red-500">*Email is required</span>
-            <span *ngIf="email?.errors?.['email']" class="text-red-500">*Email is invalid</span>
-        </div>
-        <div class="flex flex-col  mt-2 mb-1">
-            <input
-                formControlName = "password"
-                type="password" class="p-2 border border-gray-300 rounded" placeholder="Password">
-            <span *ngIf="password?.errors?.['required'] && password?.dirty" class="text-red-500">*Password is required</span>
-        </div>
-        <div class="flex flex-col  mt-2 mb-1">
-            <input
-                formControlName = "confirmPassword"
-                type="password" class="p-2 border border-gray-300 rounded" placeholder="Confirmed Password">
-            <span *ngIf="confirmPassword?.errors?.['required'] && confirmPassword?.dirty" class="text-red-500">*Confirmed password is required</span>
-        </div>
-        <div class="flex flex-col  mt-2 mb-1">
-            <input
-                formControlName = "mobileNumber"
-                type="text" class="p-2 border border-gray-300 rounded" placeholder="Mobile Number">
-            <span *ngIf="mobileNumber?.errors?.['required'] && mobileNumber?.dirty" class="text-red-500">*Mobile number is required</span>
-        </div>
-        <div class="border-gray-300">
-                <span class="border rounded">
-                    <select name="role" id="role"
-                    formControlName="role">
-                        <option value="">Select Role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Operator">Operator</option>
-                        <option value="Driver">Driver</option>
-                    </select>
-                </span>
-                <span *ngIf="role?.errors?.['required'] && role?.dirty" class="text-red-500">*Role is required</span>
-        </div>
-        <button class="bg-indigo-500 p-2 rounded mt-3 text-white">Submit</button>
-    </form>
-    <div class="flex justify-center mt-3">
-        <span>Already has account</span> <a routerLink="/login" class="text-indigo-600 ml-2 cursor-pointer">Login here</a>
+  <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
+  <form [formGroup]="form" (ngSubmit)="register()" class="flex flex-col">
+    <div class="flex flex-col mt-2 mb-1">
+      <!-- <label for="firstName">First name</label> -->
+      <input
+        formControlName="firstName"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="First Name"
+      />
+      <span
+        *ngIf="firstName?.errors?.['required'] && firstName?.dirty"
+        class="text-red-500"
+        >*First name is required</span
+      >
     </div>
+    <div class="flex flex-col mt-2 mb-1">
+      <input
+        formControlName="lastName"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Last Name"
+      />
+      <span
+        *ngIf="lastName?.errors?.['required'] && lastName?.dirty"
+        class="text-red-500"
+        >*Last name is required</span
+      >
+    </div>
+    <div class="flex flex-col mt-2 mb-1">
+      <input
+        formControlName="email"
+        type="email"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Email addresss"
+      />
+      <span
+        *ngIf="email?.errors?.['required'] && email?.dirty"
+        class="text-red-500"
+        >*Email is required</span
+      >
+      <span *ngIf="email?.errors?.['email']" class="text-red-500"
+        >*Email is invalid</span
+      >
+    </div>
+    <div class="flex flex-col mt-2 mb-1">
+      <input
+        formControlName="password"
+        type="password"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Password"
+      />
+      <span
+        *ngIf="password?.errors?.['required'] && password?.dirty"
+        class="text-red-500"
+        >*Password is required</span
+      >
+    </div>
+    <div class="flex flex-col mt-2 mb-1">
+      <input
+        formControlName="confirmPassword"
+        type="password"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Confirmed Password"
+      />
+      <span
+        *ngIf="confirmPassword?.errors?.['required'] && confirmPassword?.dirty"
+        class="text-red-500"
+        >*Confirmed password is required</span
+      >
+    </div>
+    <div class="flex flex-col mt-2 mb-1">
+      <input
+        formControlName="mobileNumber"
+        type="text"
+        class="p-2 border border-gray-300 rounded"
+        placeholder="Mobile Number"
+      />
+      <span
+        *ngIf="mobileNumber?.errors?.['required'] && mobileNumber?.dirty"
+        class="text-red-500"
+        >*Mobile number is required</span
+      >
+    </div>
+    <div class="border-gray-300">
+      <span class="border rounded">
+        <select name="role" id="role" formControlName="role">
+          <option value="">Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="Operator">Operator</option>
+          <option value="Driver">Driver</option>
+        </select>
+      </span>
+      <span
+        *ngIf="role?.errors?.['required'] && role?.dirty"
+        class="text-red-500"
+        >*Role is required</span
+      >
+    </div>
+    <button class="bg-indigo-500 p-2 rounded mt-3 text-white">Submit</button>
+    <span *ngIf="error" class="text-red-500">Register Failed</span>
+    <span *ngIf="error" class="text-red-500">{{ form.errors }}</span>
+  </form>
+  <div class="flex justify-center mt-3">
+    <span>Already has account</span>
+    <a routerLink="/login" class="text-indigo-600 ml-2 cursor-pointer"
+      >Login here</a
+    >
+  </div>
 </div>

@@ -31,11 +31,13 @@ export default class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
-    if (this.authService.isLoggedIn()){this.router.navigate(['/home'])}
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/home']);
+    }
   }
 
   login() {
-    this.authService.loginService(this.form.value).subscribe({
+    this.authService.loginUser(this.form.value).subscribe({
       next: (res) => {
         // console.log(res.token);
         // alert('Login successfully');
@@ -45,7 +47,7 @@ export default class LoginComponent {
           duration: 5000,
         });
         localStorage.setItem('user_id', res.data._id);
-        localStorage.setItem("username", res.data.email)
+        localStorage.setItem('username', res.data.email);
         this.authService.isUserLoggedIn$.next(true);
         // this.authService.userLoggedIn$.next(res.data.email);
         this.router.navigate(['/home']);

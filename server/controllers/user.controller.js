@@ -24,7 +24,7 @@ export const userRegister = async (req, res, next) => {
     return next(CreateSuccess(201, "User Created"));
   } catch (error) {
     // return res.status(500).send("Something went wrong");
-    return next(CreateError(500, "Something went wrong"));
+    return next(CreateError(400, "Something went wrong"));
   }
 };
 
