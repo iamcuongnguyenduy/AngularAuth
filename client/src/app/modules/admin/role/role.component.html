@@ -1,10 +1,14 @@
-
-<input class="peer m-20 rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+<div class="mt-20 ml-20 mb-10">
+<input class="peer rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
 type="text" 
     (keyup.enter)="addRole(rolename)"
     name="addrole" id="addrole" placeholder="role name" #rolename>
-<button (click)="addRole(rolename)"
-class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Role</button>
+    <p-button (click)="addRole(rolename)" class="ml-10" label="Add Role"></p-button>
+    
+</div>
+<!-- <button (click)="addRole(rolename)"
+class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Role</button> -->
+
 <table class="border-separate border border-slate-400 ml-20">
     <thead>
       <tr>

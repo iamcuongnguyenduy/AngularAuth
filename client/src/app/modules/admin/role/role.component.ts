@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RoleService } from 'src/app/services/role.service';
+import { RoleService } from 'src/app/services/role.service';  
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-role',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonModule],
   templateUrl: './role.component.html',
   styleUrls: ['./role.component.scss'],
 })
@@ -42,6 +43,10 @@ export default class RoleComponent implements OnInit {
   deleteRole(roleId: any) {
     this.roleService.deleteRole(roleId).subscribe((res) => {
       alert('Deleted successfully');
+    },
+    (error) => {
+      alert('Something went wrong');
+      console.log(error);
     });
   }
 }
