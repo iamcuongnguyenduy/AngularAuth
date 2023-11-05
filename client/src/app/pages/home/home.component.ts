@@ -3,34 +3,17 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { UserListComponent } from 'src/app/modules/admin/user-list/user-list.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ButtonModule],
+  imports: [CommonModule, ButtonModule, UserListComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export default class HomeComponent implements OnInit {
-  authService = inject(AuthService);
-  users = [];
   ngOnInit(): void {
-    // this.getUser()
+    throw new Error('Method not implemented.');
   }
-  router = inject(Router);
-  getUser() {
-    // this.authService.getAllUsers().subscribe((res) => {
-    //   this.users = res.data;
-    // });
-    // console.log(this.users);
-    this.authService.getAllUsers().subscribe({
-      next: (res) => {
-        this.users = res.data;
-      },
-      error: (err) => {
-        console.log(err);
-        localStorage.removeItem('user_id');
-        this.router.navigate(['login']);
-      },
-    });
-  }
+  
 }
