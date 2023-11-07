@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@ionic/angular": "^7.5.3",
+    "@ionic/storage-angular": "^4.0.0"
+  }
+}
